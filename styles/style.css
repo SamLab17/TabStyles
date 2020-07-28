@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+	background-color: #eee;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+}
+
+.centered {
+	justify-self: center;
+	text-align: center;
+}
+
+.container {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px #ccc;
+	padding: 20px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tabs > input {
+	display: none;
+}
+
+.tabs > label {
+	order: 1;
+	cursor: pointer;
+}
+
+.tabs > div {
+	order: 99;
+	display: none;
+	width: 100%;
+}
+
+.tabs > input:checked + label + div {
+	display: block;
+}
+
+/*
+ * Style 0
+ */
+
+.tab-style-0 > label {
+	background-color: #eee;
+	padding: 10px 15px;
+	border: 1px solid #bbb;
+	border-radius: 5px 5px 0px 0px;
+	transition: background-color 0.2s linear;
+	margin-left: -1px;
+	margin-bottom: -1px;
+	z-index: 1;
+}
+
+.tab-style-0 > label:nth-of-type(1) {
+	margin-left: 0px;
+}
+
+.tab-style-0 > label:hover {
+	background-color: #f5f5f5;
+}
+
+.tab-style-0 > input:checked + label {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.tab-style-0 > div {
+	border: 1px solid #ccc;
+	border-radius: 0px 5px 5px 5px;
+	padding: 10px 20px;
+	background-color: #fff;
+}
+
+/*
+ * Style 1
+ */
+
+.tab-style-1 {
+	background-color: #bbb;
+}
+
+.tab-style-1 > label {
+	/*background-color: #bbb;*/
+	color: #555;
+	padding: 10px 15px;
+	transition: background-color 0.2s ease-out, color 0.2s linear;
+}
+
+.tab-style-1 > label:hover {
+	background-color: #ccc;
+	color: #222;
+}
+
+.tab-style-1 > input:checked + label {
+	color: #000;
+	background-color: #eee;
+}
+
+.tab-style-1 > div {
+	padding: 10px 20px;
+	background-color: #eee;
+}
+
+/*
+ * Style 2
+ */
+
+.tab-style-2 {
+	border: 1px solid #222;
+	border-radius: 5px;
+}
+
+.tab-style-2 > label {
+	padding: 10px 20px;
+	transition: background-color 0.2s linear, border-bottom 0.1s linear;
+	border-bottom: 2px solid transparent;
+}
+
+.tab-style-2 > label:hover {
+	background-color: #f3f3f3;
+}
+
+.tab-style-2 > input:checked + label {
+	border-bottom: 2px solid blueviolet;
+}
+
+.tab-style-2 > div {
+	border-top: 1px solid rgba(16, 16, 16, .5);
+	padding: 15px;
+}
+
+/*
+ * Style 3
+ */
+
+.tab-style-3 {
+	background-color: #fff;
+	justify-content: space-evenly;
+}
+
+.tab-style-3 > label {
+	padding: 10px 15px;
+}
+
+.tab-style-3 > label:after {
+	display: block;
+	content: '';
+	border-bottom: 2px solid blueviolet;
+	transform: scaleX(0);
+	transition: transform 0.2s ease-in-out;
+}
+
+.tab-style-3 > label:hover:after {
+	transform: scaleX(1);
+}
+
+.tab-style-3 > input:checked + label:after {
+	transform: scaleX(1);
+}
+
+.tab-style-3 > div {
+	background-color: #fff;
+	padding: 5px 15px;
+}
